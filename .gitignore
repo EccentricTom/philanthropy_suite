@@ -1,15 +1,44 @@
-# Python (uv)
-__pycache__/
-.venv/
-.pytest_cache/
-*.pyc
+# --- System Files ---
+.DS_Store
+Thumbs.db
 
-# Node.js
+# --- Python / uv (Backend) ---
+.venv/
+.python-version
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.uv/
+
+# --- Node / Vite (Frontend) ---
 node_modules/
 dist/
+dist-ssr/
+*.local
 .eslintcache
+.stylelintcache
 
-# Environment & DB
-/*.env
+# --- Environment & Secrets (CRITICAL) ---
+# This catches .env, .env.local, .env.backend, etc., in any directory
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Database ---
 *.db
-backend/alembic/versions/*.pyc # Keep the .py migration files, ignore cache
+*.sqlite3
+# If using a local folder for Docker Postgres data
+pgdata/
+
+# --- Testing & Coverage ---
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+coverage.xml
+nosetests.xml
