@@ -1,13 +1,44 @@
 @import "tailwindcss";
 
 @theme {
-  /* Adding a custom brand color */
   --color-brand-primary: #10b981;
-  --color-brand-dark: #064e3b;
-  
-  /* Adding a custom font constraint */
-  --font-display: "Inter", "sans-serif";
-  
-  /* Adding a custom shadow */
-  --shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --color-brand-dark: #0f172a;
+  --color-brand-surface: #f8fafc;
+  --font-heading: "Inter", "sans-serif";
+  --font-data: "JetBrains Mono", "monospace";
+  --radius-dashboard: 1rem;
+}
+
+@layer components {
+  /* --- BEHAVIORAL BASES (Safe) --- */
+  .btn-interactive {
+    @apply flex items-center justify-center gap-2 transition-all active:scale-[0.98] cursor-pointer disabled:opacity-50;
+  }
+
+  /* --- LAYOUT SHELL --- */
+  .app-container { @apply min-h-screen bg-brand-surface font-sans text-slate-900; }
+  .header-nav { @apply bg-white border-b border-slate-200 px-8 py-4 flex justify-between items-center sticky top-0 z-20; }
+  .main-layout { @apply flex mx-auto p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10; }
+
+  /* --- COMPONENT STYLES --- */
+  .card-project {
+    @apply bg-white border border-slate-200 rounded-dashboard p-6 shadow-sm hover:border-brand-primary/30 transition-all;
+  }
+
+  .panel-summary {
+    @apply sticky top-28 bg-brand-dark rounded-dashboard p-8 text-white shadow-xl;
+  }
+
+  /* --- SPECIFIC VARIANTS --- */
+  .btn-primary-style {
+    @apply bg-brand-primary text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-brand-primary/20 hover:brightness-110;
+  }
+
+  .btn-ghost-style {
+    @apply text-sm font-bold text-brand-primary bg-brand-primary/5 px-4 py-2 rounded-full hover:bg-brand-primary/10;
+  }
+
+  .input-budget-wrapper {
+    @apply flex items-center gap-3 bg-slate-100 px-4 py-2 rounded-full border border-transparent focus-within:border-brand-primary focus-within:bg-white;
+  }
 }
