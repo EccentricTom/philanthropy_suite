@@ -10,6 +10,6 @@ dist/
 .eslintcache
 
 # Environment & DB
-.env
+/*.env
 *.db
 backend/alembic/versions/*.pyc # Keep the .py migration files, ignore cache
