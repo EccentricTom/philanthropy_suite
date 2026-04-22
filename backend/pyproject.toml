@@ -9,9 +9,13 @@ dependencies = [
     "fastapi>=0.136.0",
     "numpy>=2.4.4",
     "pydantic-settings>=2.14.0",
+    "pytest>=9.0.3",
     "sqlmodel>=0.0.38",
     "uvicorn[standard]>=0.45.0",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
 
 [dependency-groups]
 dev = [

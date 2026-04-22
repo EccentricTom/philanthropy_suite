@@ -55,6 +55,7 @@ dependencies = [
     { name = "fastapi" },
     { name = "numpy" },
     { name = "pydantic-settings" },
+    { name = "pytest" },
     { name = "sqlmodel" },
     { name = "uvicorn", extra = ["standard"] },
 ]
@@ -73,6 +74,7 @@ requires-dist = [
     { name = "fastapi", specifier = ">=0.136.0" },
     { name = "numpy", specifier = ">=2.4.4" },
     { name = "pydantic-settings", specifier = ">=2.14.0" },
+    { name = "pytest", specifier = ">=9.0.3" },
     { name = "sqlmodel", specifier = ">=0.0.38" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.45.0" },
 ]
