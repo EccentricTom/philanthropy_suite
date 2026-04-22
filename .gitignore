@@ -1,10 +1,15 @@
-# Python-generated files
+# Python (uv)
 __pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
+.venv/
+.pytest_cache/
+*.pyc
 
-# Virtual environments
-.venv
+# Node.js
+node_modules/
+dist/
+.eslintcache
+
+# Environment & DB
+.env
+*.db
+backend/alembic/versions/*.pyc # Keep the .py migration files, ignore cache
