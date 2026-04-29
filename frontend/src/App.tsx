@@ -2,39 +2,19 @@ import { useState } from 'react';
 import { ListChecks, Plus, PieChart } from 'lucide-react';
 import { Header } from './components/Header';
 import { ProjectCard } from './components/ProjectCard';
-
-// 1. IMPORT TYPE: Ensures compatibility with 'verbatimModuleSyntax'
+import { useProjectLogic } from './hooks/useProjectLogic.ts';
 import type { Project } from './types';
 
 export default function App() {
   // --- STATE ---
-  const [budget, setBudget] = useState(1000000);
-  const [projects, setProjects] = useState<Project[]>([]);
-
-  // --- LOGIC FUNCTIONS ---
-  
-  // Adds a new project card to the list
-  const addProject = () => {
-    const newProject: Project = {
-      id: crypto.randomUUID(),
-      name: '',
-      impact: 50,
-      urgency: 50
-    };
-    setProjects([...projects, newProject]);
-  };
-
-  // Updates specific fields (name, impact, urgency) for a specific ID
-  const updateProject = (id: string, field: keyof Project, value: string | number) => {
-    setProjects(
-      projects.map((p) => (p.id === id ? { ...p, [field]: value } : p))
-    );
-  };
-
-  // Removes a project from the list
-  const deleteProject = (id: string) => {
-    setProjects(projects.filter((p) => p.id !== id));
-  };
+  const { 
+    budget, 
+    setBudget, 
+    projects, 
+    addProject, 
+    updateProject, 
+    deleteProject 
+  } = useProjectLogic();
 
   // --- RENDER ---
   return (
