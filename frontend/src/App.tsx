@@ -1,9 +1,9 @@
-import { useState } from 'react';
+//import { useState } from 'react';
 import { ListChecks, Plus, PieChart } from 'lucide-react';
 import { Header } from './components/Header';
 import { ProjectCard } from './components/ProjectCard';
 import { useProjectLogic } from './hooks/useProjectLogic.ts';
-import type { Project } from './types';
+//import type { Project } from './types';
 
 export default function App() {
   // --- STATE ---

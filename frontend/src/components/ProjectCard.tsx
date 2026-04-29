@@ -1,6 +1,7 @@
 // src/components/ProjectCard.tsx
 import { Trash2 } from 'lucide-react';
 import type { Project } from '../types'; // Import the type we created
+import { Slider } from './Slider';
 
 interface ProjectCardProps {
   project: Project;
@@ -26,16 +27,17 @@ export function ProjectCard({ project, onUpdate, onDelete }: ProjectCardProps) {
         </button>
       </div>
       
-      {/* Visual placeholder for the sliders we'll build next */}
-      <div className="mt-4 grid grid-cols-2 gap-4 border-t border-slate-50 pt-4">
-        <div className="space-y-1">
-          <label className="text-[10px] font-bold text-slate-400 uppercase">Impact</label>
-          <div className="h-2 bg-slate-100 rounded-full w-full"></div>
-        </div>
-        <div className="space-y-1">
-          <label className="text-[10px] font-bold text-slate-400 uppercase">Urgency</label>
-          <div className="h-2 bg-slate-100 rounded-full w-full"></div>
-        </div>
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-8">
+        <Slider 
+          label="Impact Score" 
+          value={project.impact} 
+          onChange={(val) => onUpdate(project.id, 'impact', val)} 
+        />
+        <Slider 
+          label="Urgency" 
+          value={project.urgency} 
+          onChange={(val) => onUpdate(project.id, 'urgency', val)} 
+        />
       </div>
     </div>
   );

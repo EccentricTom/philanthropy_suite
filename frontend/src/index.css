@@ -41,4 +41,14 @@
   .input-budget-wrapper {
     @apply flex items-center gap-3 bg-slate-100 px-4 py-2 rounded-full border border-transparent focus-within:border-brand-primary focus-within:bg-white;
   }
+
+  /* Ensure this is in your @layer components block in index.css */
+.slider-track {
+  @apply w-full h-1.5 bg-slate-100 rounded-lg cursor-pointer accent-brand-primary transition-all;
+}
+
+/* Optional: Make the "thumb" (the circle) look better in Chrome/Safari */
+.slider-track::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 bg-white border-2 border-brand-primary rounded-full shadow-sm;
+}
 }
